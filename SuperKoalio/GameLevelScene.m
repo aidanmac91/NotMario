@@ -276,12 +276,9 @@
   self.map.position = viewPoint;
 }
 
--(void)moving
+-(void)moveForward
 {
-  
-  if (_isMoving) {
     NSLog(@"THere is live");
-  }
 }
 
 @end

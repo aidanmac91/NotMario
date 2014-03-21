@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import "GameLevelScene.h"
+@interface ViewController : UIViewController <GameLevelSceneDelegate>
 
-@interface ViewController : UIViewController
+@property (nonatomic, weak) id <GameLevelSceneDelegate> delegate;
 
 @end

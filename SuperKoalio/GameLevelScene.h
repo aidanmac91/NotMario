@@ -7,9 +7,14 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+@class GameLevelScene;
+@protocol GameLevelSceneDelegate <NSObject>
 
+-(void)moveForward;
+@property (nonatomic, assign) BOOL isMoving;
+
+@end
 @interface GameLevelScene : SKScene
 
-
-@property (nonatomic, assign) BOOL isMoving;
+//@property (nonatomic, assign) BOOL isMoving;
 @end

@@ -14,6 +14,7 @@
 @property (nonatomic, assign) BOOL onGround;
 @property (nonatomic, assign) BOOL forwardMarch;
 @property (nonatomic, assign) BOOL mightAsWellJump;
+@property (nonatomic,assign) bool backwardMarch;
 - (void)update:(NSTimeInterval)delta;
 - (CGRect)collisionBoundingBox;
 @end

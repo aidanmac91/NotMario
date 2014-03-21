@@ -44,8 +44,11 @@
   // Release any cached data, images, etc that aren't in use.
 }
 
--(IBAction)moving:(id)sender
+-(IBAction)moveForward
 {
+  [self.delegate moveForward];
+  //[self.delegate moveForward;
+  //GameLevelScene
   //[self:]
 }
 

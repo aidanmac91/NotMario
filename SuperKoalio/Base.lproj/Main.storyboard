@@ -32,7 +32,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moving:" destination="LVB-YS-i5n" eventType="touchUpInside" id="B81-ZX-wNe"/>
+                                    <action selector="moveForward:" destination="LVB-YS-i5n" eventType="touchUpInside" id="Xj2-8t-a79"/>
                                 </connections>
                             </button>
                         </subviews>
