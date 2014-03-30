@@ -20,29 +20,67 @@
 @property (nonatomic, strong) TMXLayer *walls;
 @property (nonatomic, strong) TMXLayer *hazards;
 @property (nonatomic, assign) BOOL gameOver;
+@property (nonatomic, assign) int currentLevel;
+
+
 @end
 
 @implementation GameLevelScene
+int currentLevel=0;
+
 
 -(id)initWithSize:(CGSize)size {
   if (self = [super initWithSize:size]) {
-    [[SKTAudio sharedInstance] playBackgroundMusic:@"level1.mp3"];
+   // [[SKTAudio sharedInstance] playBackgroundMusic:@"level1.mp3"];
+   // NSLog(@"Value: %d",self.player.currentLevel);
     
-    self.backgroundColor = [SKColor colorWithRed:.4 green:.4 blue:.95 alpha:1.0];
+   // self.backgroundColor = [SKColor colorWithRed:.4 green:.4 blue:.95 alpha:1.0];
     
-    self.map = [JSTileMap mapNamed:@"level1.tmx"];
-    [self addChild:self.map];
-    self.walls = [self.map layerNamed:@"walls"];
-    self.hazards = [self.map layerNamed:@"hazards"];
+    //NSLog("@"self.player.currentLevel
+    [self LoadLevel];
     
-    self.player = [[Player alloc] initWithImageNamed:@"koalio_stand"];
-    self.player.position = CGPointMake(100, 50);
-    self.player.zPosition = 15;
-    [self.map addChild:self.player];
+   // self.walls = [self.map layerNamed:@"walls"];
+   // self.hazards = [self.map layerNamed:@"hazards"];
     
-    self.userInteractionEnabled = YES;
+   // self.player = [[Player alloc] initWithImageNamed:@"koalio_stand"];
+   // self.player.position = CGPointMake(100, 50);
+   // self.player.zPosition = 15;
+    //[self.map addChild:self.player];
+    
+    //self.userInteractionEnabled = YES;
   }
   return self;
+}
+
+-(void)LoadLevel{
+  if(currentLevel==1)
+  {
+    self.map = [JSTileMap mapNamed:@"level2.tmx"];
+    [self addChild:self.map];
+  }
+  else if (currentLevel==2)
+  {
+    self.map = [JSTileMap mapNamed:@"level3.tmx"];
+    [self addChild:self.map];
+  }
+  else{
+    self.map = [JSTileMap mapNamed:@"level1.tmx"];
+    [self addChild:self.map];
+  }
+  
+  [[SKTAudio sharedInstance] playBackgroundMusic:@"level1.mp3"];
+  
+  self.backgroundColor = [SKColor colorWithRed:.4 green:.4 blue:.95 alpha:1.0];
+  self.walls = [self.map layerNamed:@"walls"];
+  self.hazards = [self.map layerNamed:@"hazards"];
+  
+  self.player = [[Player alloc] initWithImageNamed:@"koalio_stand"];
+  self.player.position = CGPointMake(100, 50);
+  self.player.zPosition = 15;
+  [self.map addChild:self.player];
+  
+  self.userInteractionEnabled = YES;
+  
 }
 
 - (void)update:(NSTimeInterval)currentTime
@@ -189,9 +227,18 @@
   
   NSString *gameText;
   
-  if (won) {
-    gameText = @"You Won!";
-  } else {
+  
+    
+  if (won && currentLevel==2)
+  {
+    gameText=@"You beat the game!!";
+    currentLevel=0;
+  }
+  else if (won) {
+  gameText = @"You Won!";
+  currentLevel++;
+  }
+  else {
     gameText = @"You have Died!";
   }
 	
@@ -210,25 +257,39 @@
   [replay addTarget:self action:@selector(replay:) forControlEvents:UIControlEventTouchUpInside];
   replay.frame = CGRectMake(self.size.width / 2.0 - replayImage.size.width / 2.0, self.size.height / 2.0 - replayImage.size.height / 2.0, replayImage.size.width, replayImage.size.height);
   [self.view addSubview:replay];
+    //NSLog(@"Value2: %d",self.player.currentLevel);
 }
 
 //3
 - (void)replay:(id)sender
 {
   [[self.view viewWithTag:321] removeFromSuperview];
-  [self.view presentScene:[[GameLevelScene alloc] initWithSize:self.size]];
+  //self.player.currentLevel=1;
+  //NSLog(@"Value3: %d",self.player.currentLevel);
+ // [self LoadLevel];
+ [self.view presentScene:[[GameLevelScene alloc] initWithSize:self.size]];
+  
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
   for (UITouch *touch in touches) {
     CGPoint touchLocation = [touch locationInNode:self];
-    NSLog(@"X: %f,",touchLocation.x);
-    NSLog(@"Y: %f,",touchLocation.y);
-    if (touchLocation.x > self.size.width / 2.0) {
+    NSLog(@"%f",touchLocation.x);
+      NSLog(@"2/3 %f",(self.size.width)/3*2);
+      NSLog(@"1/3 %f",(self.size.width));
+    
+    if (touchLocation.x >(self.size.width/3*2)) {
       self.player.mightAsWellJump = YES;
-    } else {
-      self.player.forwardMarch = YES;
+        NSLog(@"jump");
+    }else if (touchLocation.x<(self.size.width/3*2)&&touchLocation.x>(self.size.width/3))
+    {
+      self.player.forwardMarch=YES;
+      NSLog(@"moving back");
+    }
+    else {
+      self.player.backwardMarch = YES;
+        NSLog(@"moving forward");
     }
   }
 }
@@ -245,10 +306,12 @@
     
     if (touchLocation.x > halfWidth && previousTouchLocation.x <= halfWidth) {
       self.player.forwardMarch = NO;
+      self.player.backwardMarch=NO;
       self.player.mightAsWellJump = YES;
     } else if (previousTouchLocation.x > halfWidth && touchLocation.x <= halfWidth) {
       self.player.forwardMarch = YES;
       self.player.mightAsWellJump = NO;
+      self.player.backwardMarch=NO;
     }
   }
 }

@@ -13,8 +13,9 @@
 @property (nonatomic, assign) CGPoint velocity;
 @property (nonatomic, assign) BOOL onGround;
 @property (nonatomic, assign) BOOL forwardMarch;
+@property (nonatomic,assign) BOOL backwardMarch;
 @property (nonatomic, assign) BOOL mightAsWellJump;
-@property (nonatomic,assign) bool backwardMarch;
+@property (nonatomic,assign) int currentLevel;
 - (void)update:(NSTimeInterval)delta;
 - (CGRect)collisionBoundingBox;
 @end

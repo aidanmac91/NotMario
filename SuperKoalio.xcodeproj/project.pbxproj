@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3913633F18E5808E0004F03C /* level2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 3913633E18E5808E0004F03C /* level2.tmx */; };
+		3913634118E59AF80004F03C /* level3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 3913634018E59AF80004F03C /* level3.tmx */; };
+		3967DAAD18E8C4C500EFEB4E /* tilesetDungeon.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 3967DAAC18E8C4C500EFEB4E /* tilesetDungeon.bmp */; };
 		F275B671186E0B06009F6E6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F275B670186E0B06009F6E6B /* Foundation.framework */; };
 		F275B673186E0B06009F6E6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F275B672186E0B06009F6E6B /* CoreGraphics.framework */; };
 		F275B675186E0B06009F6E6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F275B674186E0B06009F6E6B /* UIKit.framework */; };
@@ -57,6 +60,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3913633E18E5808E0004F03C /* level2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level2.tmx; sourceTree = "<group>"; };
+		3913634018E59AF80004F03C /* level3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level3.tmx; sourceTree = "<group>"; };
+		3967DAAC18E8C4C500EFEB4E /* tilesetDungeon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = tilesetDungeon.bmp; sourceTree = "<group>"; };
 		F275B66D186E0B06009F6E6B /* SuperKoalio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperKoalio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F275B670186E0B06009F6E6B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F275B672186E0B06009F6E6B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -235,6 +241,9 @@
 		F275B6C1186E21D9009F6E6B /* TMX Files */ = {
 			isa = PBXGroup;
 			children = (
+				3967DAAC18E8C4C500EFEB4E /* tilesetDungeon.bmp */,
+				3913634018E59AF80004F03C /* level3.tmx */,
+				3913633E18E5808E0004F03C /* level2.tmx */,
 				F275B6EA186E2731009F6E6B /* tileSet.png */,
 				F275B6EB186E2731009F6E6B /* tileSet@2x.png */,
 				F275B6BB186E21CB009F6E6B /* level1.tmx */,
@@ -365,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3967DAAD18E8C4C500EFEB4E /* tilesetDungeon.bmp in Resources */,
 				F275B6BF186E21CB009F6E6B /* level1.tmx in Resources */,
 				F275B6B7186E21AB009F6E6B /* sprites.atlas in Resources */,
 				F275B6BE186E21CB009F6E6B /* level1.mp3 in Resources */,
@@ -373,9 +383,11 @@
 				F275B690186E0B06009F6E6B /* Images.xcassets in Resources */,
 				F275B6F4186EC824009F6E6B /* replay.png in Resources */,
 				F275B6F5186EC824009F6E6B /* replay@2x.png in Resources */,
+				3913634118E59AF80004F03C /* level3.tmx in Resources */,
 				F275B6BD186E21CB009F6E6B /* jump.wav in Resources */,
 				F275B6BC186E21CB009F6E6B /* hurt.wav in Resources */,
 				F275B6EC186E2731009F6E6B /* tileSet.png in Resources */,
+				3913633F18E5808E0004F03C /* level2.tmx in Resources */,
 				F275B686186E0B06009F6E6B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

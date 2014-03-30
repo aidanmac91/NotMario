@@ -483,7 +483,7 @@
 //	_atlasTexture = [SKTexture textureWithImage:atlas];           // CML: There seems to be a bug where creating with Image instead of ImageNamed breaks the
 	_atlasTexture = [SKTexture textureWithImageNamed:_sourceImage]; //      archiving.
 	
-	NSLog(@"texture image: %@\rSize (%f, %f)", _sourceImage, _atlasTexture.size.width, _atlasTexture.size.height);
+	//NSLog(@"texture image: %@\rSize (%f, %f)", _sourceImage, _atlasTexture.size.width, _atlasTexture.size.height);
 	
 	_unitTileSize = CGSizeMake(_tileSize.width / _imageSize.width,
 							   _tileSize.height / _imageSize.height);
@@ -795,7 +795,7 @@
             
 			child.zPosition = baseZPosition + ((map.zOrderCount - layerInfo.zOrderCount) * zOrderModifier);
 #ifdef DEBUG
-			NSLog(@"Layer %@ has zPosition %f", layerInfo.name, child.zPosition);
+			//NSLog(@"Layer %@ has zPosition %f", layerInfo.name, child.zPosition);
 #endif
 			[map addChild:child];
 		}
@@ -805,7 +805,7 @@
 	for (TMXObjectGroup* objectGroup in map.objectGroups)
 	{
 #ifdef DEBUG
-		NSLog(@"Object Group %@ has zPosition %f", objectGroup.groupName, (baseZPosition + (map.zOrderCount - objectGroup.zOrderCount) * zOrderModifier));
+		//NSLog(@"Object Group %@ has zPosition %f", objectGroup.groupName, (baseZPosition + (map.zOrderCount - objectGroup.zOrderCount) * zOrderModifier));
 #endif
 		
 		for (NSDictionary* obj in objectGroup.objects)
@@ -858,7 +858,7 @@
 		image.zPosition = baseZPosition + ((map.zOrderCount - imageLayer.zOrderCount) * zOrderModifier);
 		[map addChild:image];
 #ifdef DEBUG
-		NSLog(@"IMAGE Layer %@ has zPosition %f", imageLayer.name, image.zPosition);
+		//NSLog(@"IMAGE Layer %@ has zPosition %f", imageLayer.name, image.zPosition);
 #endif
 		
 //#warning the positioning is off here, seems to be bottom-left instead of top-left.  Might be off on the rest of the sprites too...?
