@@ -20,6 +20,7 @@
 @property (nonatomic, strong) TMXLayer *walls;
 @property (nonatomic, strong) TMXLayer *hazards;
 @property (nonatomic, assign) BOOL gameOver;
+@property (nonatomic) int numberOfLives;
 @property (nonatomic, assign) int currentLevel;
 
 
@@ -27,10 +28,13 @@
 
 @implementation GameLevelScene
 int currentLevel=0;
+int numberOfLives=3;
 
 
 -(id)initWithSize:(CGSize)size {
   if (self = [super initWithSize:size]) {
+    
+   
    // [[SKTAudio sharedInstance] playBackgroundMusic:@"level1.mp3"];
    // NSLog(@"Value: %d",self.player.currentLevel);
     
@@ -38,6 +42,14 @@ int currentLevel=0;
     
     //NSLog("@"self.player.currentLevel
     [self LoadLevel];
+    
+    UIImageView *likeImageImageview = [[UIImageView alloc] initWithFrame:CGRectMake(20,7.5,39.6,39.6)];
+    
+    UIImage *img0 = [UIImage imageNamed:@"heartDead"];
+    [likeImageImageview setImage:img0];
+    
+    [self.view addSubview:likeImageImageview];
+
     
    // self.walls = [self.map layerNamed:@"walls"];
    // self.hazards = [self.map layerNamed:@"hazards"];
@@ -53,6 +65,7 @@ int currentLevel=0;
 }
 
 -(void)LoadLevel{
+  NSLog(@"%d",numberOfLives);
   if(currentLevel==1)
   {
     self.map = [JSTileMap mapNamed:@"level2.tmx"];
@@ -233,6 +246,7 @@ int currentLevel=0;
   {
     gameText=@"You beat the game!!";
     currentLevel=0;
+    [self resetHearts];
   }
   else if (won) {
   gameText = @"You Won!";
@@ -240,6 +254,18 @@ int currentLevel=0;
   }
   else {
     gameText = @"You have Died!";
+    numberOfLives--;
+  
+    UIImageView *imageView=(UIImageView *)[self.view viewWithTag:numberOfLives+1];
+    [imageView setImage:[UIImage imageNamed:@"heartDead"]];
+    //}
+    //else if (numberOfLives==1)
+    
+  }
+  
+  if(numberOfLives==0)
+  {
+    [self resetHearts];
   }
 	
   //1
@@ -275,21 +301,15 @@ int currentLevel=0;
 {
   for (UITouch *touch in touches) {
     CGPoint touchLocation = [touch locationInNode:self];
-    NSLog(@"%f",touchLocation.x);
-      NSLog(@"2/3 %f",(self.size.width)/3*2);
-      NSLog(@"1/3 %f",(self.size.width));
     
     if (touchLocation.x >(self.size.width/3*2)) {
       self.player.mightAsWellJump = YES;
-        NSLog(@"jump");
     }else if (touchLocation.x<(self.size.width/3*2)&&touchLocation.x>(self.size.width/3))
     {
       self.player.forwardMarch=YES;
-      NSLog(@"moving back");
     }
     else {
       self.player.backwardMarch = YES;
-        NSLog(@"moving forward");
     }
   }
 }
@@ -297,31 +317,45 @@ int currentLevel=0;
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
   for (UITouch *touch in touches) {
     
-    float halfWidth = self.size.width / 2.0;
+    //float halfWidth = self.size.width / 2.0;
+    float firstThird= self.size.width /3.0;
+    float secondThird= self.size.width/3.0*2.0;
     CGPoint touchLocation = [touch locationInNode:self];
     
     //get previous touch and convert it to node space
     CGPoint previousTouchLocation = [touch previousLocationInNode:self];
     
     
-    if (touchLocation.x > halfWidth && previousTouchLocation.x <= halfWidth) {
+    if (touchLocation.x > secondThird && previousTouchLocation.x <= secondThird) {
       self.player.forwardMarch = NO;
       self.player.backwardMarch=NO;
       self.player.mightAsWellJump = YES;
-    } else if (previousTouchLocation.x > halfWidth && touchLocation.x <= halfWidth) {
+    } else if (touchLocation.x <= secondThird&&touchLocation.x>=firstThird &&previousTouchLocation.x<firstThird &&previousTouchLocation.x>secondThird) {
       self.player.forwardMarch = YES;
       self.player.mightAsWellJump = NO;
       self.player.backwardMarch=NO;
     }
+    else if (touchLocation.x<firstThird&& previousTouchLocation.x>=firstThird)
+    {
+      self.player.forwardMarch=NO;
+      self.player.mightAsWellJump=NO;
+      self.player.backwardMarch=YES;
+    }
   }
+  
+  
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
   
   for (UITouch *touch in touches) {
     CGPoint touchLocation = [touch locationInNode:self];
-    if (touchLocation.x < self.size.width / 2.0) {
+    if (touchLocation.x < self.size.width / 3.0) {
+      self.player.backwardMarch=NO;}
+    else if(touchLocation.x<self.size.width/3*2&&touchLocation.x>self.size.width/3)
+    {
       self.player.forwardMarch = NO;
+      
     } else {
       self.player.mightAsWellJump = NO;
     }
@@ -342,6 +376,17 @@ int currentLevel=0;
 -(void)moveForward
 {
     NSLog(@"THere is live");
+}
+
+-(void)resetHearts
+{
+  
+  UIImageView *imageView=(UIImageView *)[self.view viewWithTag:1];
+  [imageView setImage:[UIImage imageNamed:@"heartAlive"]];
+  UIImageView *imageView1=(UIImageView *)[self.view viewWithTag:2];
+  [imageView1 setImage:[UIImage imageNamed:@"heartAlive"]];
+  UIImageView *imageView2=(UIImageView *)[self.view viewWithTag:3];
+  [imageView2 setImage:[UIImage imageNamed:@"heartAlive"]];
 }
 
 @end
