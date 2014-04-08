@@ -10,6 +10,7 @@
 #import "SKTUtils.h"
 
 @implementation Player
+int multiplierForDirection;
 //1
 - (instancetype)initWithImageNamed:(NSString *)name
 {
@@ -46,9 +47,14 @@
   
   if (self.forwardMarch) {
     self.velocity = CGPointAdd(self.velocity,forwardMoveStep);
+    multiplierForDirection = 1;
+    self.xScale = fabs(self.xScale) * multiplierForDirection;
   }
   if(self.backwardMarch){
     self.velocity = CGPointAdd(self.velocity,backwardMoveStep);
+    
+    multiplierForDirection = -1;
+    self.xScale = fabs(self.xScale) * multiplierForDirection;
   }
   //4
   CGPoint minMovement = CGPointMake(450.0, -450);

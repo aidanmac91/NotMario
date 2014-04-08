@@ -17,7 +17,9 @@
 
 @end
 @interface GameLevelScene : SKScene
-
+{
+  NSTimer *timer;
+}
 
 
 //@property (nonatomic, assign) BOOL isMoving;

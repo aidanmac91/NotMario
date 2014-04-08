@@ -12,6 +12,13 @@
 		3905322F18E9E23F00FE9EDC /* heartDead.png in Resources */ = {isa = PBXBuildFile; fileRef = 3905322E18E9E23F00FE9EDC /* heartDead.png */; };
 		3913633F18E5808E0004F03C /* level2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 3913633E18E5808E0004F03C /* level2.tmx */; };
 		3913634118E59AF80004F03C /* level3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 3913634018E59AF80004F03C /* level3.tmx */; };
+		393AF7A318ED73850030F057 /* projectile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 393AF7A218ED73850030F057 /* projectile@2x.png */; };
+		393AF7A518ED75A20030F057 /* monster@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 393AF7A418ED75A20030F057 /* monster@2x.png */; };
+		39435CA218F1AEEA00EFBEC4 /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 39435CA018F1AEEA00EFBEC4 /* leftArrow.png */; };
+		39435CA318F1AEEA00EFBEC4 /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 39435CA118F1AEEA00EFBEC4 /* rightArrow.png */; };
+		39435CA518F1B0F600EFBEC4 /* jump.png in Resources */ = {isa = PBXBuildFile; fileRef = 39435CA418F1B0F600EFBEC4 /* jump.png */; };
+		39435CAD18F1CC0800EFBEC4 /* aim-1-512 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 39435CAC18F1CC0800EFBEC4 /* aim-1-512 copy.png */; };
+		39435CAF18F1CE7200EFBEC4 /* Music1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39435CAE18F1CE7200EFBEC4 /* Music1.mp3 */; };
 		3967DAAD18E8C4C500EFEB4E /* tilesetDungeon.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 3967DAAC18E8C4C500EFEB4E /* tilesetDungeon.bmp */; };
 		F275B671186E0B06009F6E6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F275B670186E0B06009F6E6B /* Foundation.framework */; };
 		F275B673186E0B06009F6E6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F275B672186E0B06009F6E6B /* CoreGraphics.framework */; };
@@ -68,6 +75,13 @@
 		3905322E18E9E23F00FE9EDC /* heartDead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartDead.png; sourceTree = "<group>"; };
 		3913633E18E5808E0004F03C /* level2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level2.tmx; sourceTree = "<group>"; };
 		3913634018E59AF80004F03C /* level3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level3.tmx; sourceTree = "<group>"; };
+		393AF7A218ED73850030F057 /* projectile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "projectile@2x.png"; sourceTree = "<group>"; };
+		393AF7A418ED75A20030F057 /* monster@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster@2x.png"; sourceTree = "<group>"; };
+		39435CA018F1AEEA00EFBEC4 /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftArrow.png; sourceTree = "<group>"; };
+		39435CA118F1AEEA00EFBEC4 /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
+		39435CA418F1B0F600EFBEC4 /* jump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jump.png; sourceTree = "<group>"; };
+		39435CAC18F1CC0800EFBEC4 /* aim-1-512 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aim-1-512 copy.png"; sourceTree = "<group>"; };
+		39435CAE18F1CE7200EFBEC4 /* Music1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Music1.mp3; sourceTree = "<group>"; };
 		3967DAAC18E8C4C500EFEB4E /* tilesetDungeon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = tilesetDungeon.bmp; sourceTree = "<group>"; };
 		F275B66D186E0B06009F6E6B /* SuperKoalio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperKoalio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F275B670186E0B06009F6E6B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -237,6 +251,7 @@
 		F275B6C0186E21D1009F6E6B /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				39435CAE18F1CE7200EFBEC4 /* Music1.mp3 */,
 				F275B6B8186E21CB009F6E6B /* hurt.wav */,
 				F275B6B9186E21CB009F6E6B /* jump.wav */,
 				F275B6BA186E21CB009F6E6B /* level1.mp3 */,
@@ -261,6 +276,12 @@
 		F275B6C2186E21EB009F6E6B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				39435CAC18F1CC0800EFBEC4 /* aim-1-512 copy.png */,
+				39435CA418F1B0F600EFBEC4 /* jump.png */,
+				39435CA018F1AEEA00EFBEC4 /* leftArrow.png */,
+				39435CA118F1AEEA00EFBEC4 /* rightArrow.png */,
+				393AF7A418ED75A20030F057 /* monster@2x.png */,
+				393AF7A218ED73850030F057 /* projectile@2x.png */,
 				3905322E18E9E23F00FE9EDC /* heartDead.png */,
 				3905322C18E9DB7400FE9EDC /* heartAlive.png */,
 				F275B6F2186EC824009F6E6B /* replay.png */,
@@ -383,6 +404,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39435CA518F1B0F600EFBEC4 /* jump.png in Resources */,
 				3967DAAD18E8C4C500EFEB4E /* tilesetDungeon.bmp in Resources */,
 				F275B6BF186E21CB009F6E6B /* level1.tmx in Resources */,
 				3905322F18E9E23F00FE9EDC /* heartDead.png in Resources */,
@@ -390,9 +412,13 @@
 				3905322B18E9C09F00FE9EDC /* 4587.png in Resources */,
 				F275B6BE186E21CB009F6E6B /* level1.mp3 in Resources */,
 				F275B6ED186E2731009F6E6B /* tileSet@2x.png in Resources */,
+				393AF7A318ED73850030F057 /* projectile@2x.png in Resources */,
+				39435CA318F1AEEA00EFBEC4 /* rightArrow.png in Resources */,
+				39435CAD18F1CC0800EFBEC4 /* aim-1-512 copy.png in Resources */,
 				F275B67D186E0B06009F6E6B /* InfoPlist.strings in Resources */,
 				F275B690186E0B06009F6E6B /* Images.xcassets in Resources */,
 				F275B6F4186EC824009F6E6B /* replay.png in Resources */,
+				39435CA218F1AEEA00EFBEC4 /* leftArrow.png in Resources */,
 				F275B6F5186EC824009F6E6B /* replay@2x.png in Resources */,
 				3913634118E59AF80004F03C /* level3.tmx in Resources */,
 				3905322D18E9DB7400FE9EDC /* heartAlive.png in Resources */,
@@ -400,7 +426,9 @@
 				F275B6BC186E21CB009F6E6B /* hurt.wav in Resources */,
 				F275B6EC186E2731009F6E6B /* tileSet.png in Resources */,
 				3913633F18E5808E0004F03C /* level2.tmx in Resources */,
+				39435CAF18F1CE7200EFBEC4 /* Music1.mp3 in Resources */,
 				F275B686186E0B06009F6E6B /* Main.storyboard in Resources */,
+				393AF7A518ED75A20030F057 /* monster@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
