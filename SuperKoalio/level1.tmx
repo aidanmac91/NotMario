@@ -3,23 +3,18 @@
  <tileset firstgid="1" name="tileSet" tilewidth="16" tileheight="16">
   <image source="tileSet.png" trans="fe80fe" width="256" height="256"/>
  </tileset>
- <tileset firstgid="257" name="4587" tilewidth="16" tileheight="16">
-  <image source="4587.png" trans="ff00ff" width="545" height="589"/>
- </tileset>
- <tileset firstgid="1481" name="tileset dungeon" tilewidth="16" tileheight="16">
-  <image source="tilesetDungeon.bmp" trans="7e7e7f" width="256" height="1024"/>
-  <terraintypes>
-   <terrain name="New Terrain" tile="-1"/>
-  </terraintypes>
+ <tileset firstgid="257" name="tileSet2" tilewidth="16" tileheight="16">
+  <tileoffset x="5" y="5"/>
+  <image source="tileSet2.png" trans="7e7e7f" width="256" height="256"/>
  </tileset>
  <layer name="background" width="212" height="20">
   <data encoding="base64" compression="zlib">
-   eJzt11dvFDEUhuG9Di2UJPQWQui9905IgCT0ekEvASR6R6ImtAtK6FwA+QOUH8i7ogitdor3eMY29ic9V6vx+IxnfcaFgv35im/4jh+G5xISkiaf8Blf0GPRWDbmf68vRB6dPUBlrCzezazf99AvQ2xNFu9muTFt6CmP8BhP8NSje4eki0trZENPeYf3+ICPHt07JF3CGumLDf1TmlCDvjFcT1SvzevZ2NA/pQk16BvD9UT12vBs/E5/DMBADEINalGHwRhibmoVx+f+6Uvttp7Fx2As6jEODRiPRkzARHNT+xvVZ6erR9i6ZnHxpT/aehafiVmYjTmYi3mYjwVYqDBWVnujqWdn65qFVJ6s+/dKrMJqrMFarMN6NGGDwli+7I1x8eV7y9VI39Eq9EJv9EFf9EP179/bsQVbsQ3bsQM7sQu7BXP3MWFPic5QDMNwjMBIjMJog3NSTVINB3AQh3AYR3AUx3AcJyLG/ff/GVJ5XDmj6ei7kzAZUzAV0zAdM3RMMKck1XAW53AeF3ARl3AZV3C1zJjl/p+u5CQ6cAqncabwq19LrpdE5Ywmvbfkeh19dxEWYwmWYhmWY0XK6+Pmr3tdopJUw23cwV3cw308QCe68LBkPNf3mGu4jhu4iVuF9N8ceyKuzyNVEfeujruoJKbm/ifNaMFGbMJmtKIt5fVx88+rtqQanuE5XuAluvEKr/EGb0vGk+4xe7EP+yspRkMk+0Fee2C56Dh7mJx/MdIabOhPSTWo9ifJHmN6PYuR7Acm93cd3wWm+5O0Bhv6U1INqv1J8n8yvZ7FuDp/6XdBMaafvw/npxA3Ij172BAfzk+q+QnXGRLf
+   eJzt2FdvFDEUhuG9Di10CL3X0Duh9947XNBrIlFD19L7BR0SuKD8AcoP5B1BULTaKd7jGduyP+m5iuaMPZ71GadU0peyxlqd8wM/8Qu/c7pHSIjOfMFXfMN3i2rpTFlTnSLmV86pbkgx0dkDVGrl8W7m/b6Hfhlia/J4N6vVtKFnPsUzPMcLj+4dki0urZENPaUN7fiEzx7dOyRbOtYoSlgjWWzon9KEOeir4Xriem1Rz8aG/ilNmIO+Gq4n7nsoPBu/0xO90Bt90Bf90B8DMNDc0GqOz/3Tl7nbehYfgZEYhdEYg7EYh/GYYG5o/6P67HT1CFvXLCm+9Edb/18yHTMwE7MwG3MwF/MwX6FWXnujqWdn65qF1J68+/cyLMcKrMQqrMYarMU6hVq+7I1J8eV7y9VI39E6dEFXdEN39ED9v79vw3bswE7swm7swV7sE4zdx4Q9JT4NGITBGIKhGIbhBsekmrQ5HMYRHMUxHMcJnMQpnI6p2/n3GVJ7XDmj6ei7EzEJk9GIKZiKaToGWFDS5nAeF3ARl3AZV9CKq7hWpWa136crOYOzOIdmtJT+9mvJ9ZKonNGk95Zcr6PvLsBCNGERFmMJlma8Pmn8utclLmlzuIO7uIf7eICHeITHeFJRz/U95jpu4CZu4XYp+zfH/pjri0hdzL3rky6qiKmxd2Q9NmAjNmEztmBrxuuTxl/U3NLm8BKv8Bpv8Bbv8B4f8LGinnSPOYCDOFTLZDREsh8UtQdWi46zh8nxR5HOwYb+lDYH1f4k2WNMr2cUyX5gcn/X8V1guj9J52BDf0qbg2p/kvyeTK9nFFfHL/0uiGL6+ftwfgpxI9Kzhw3x4fykmj9lGBPD
   </data>
  </layer>
  <layer name="walls" width="212" height="20">
   <data encoding="base64" compression="zlib">
-   eJztlw0KAiEQRr1p3aBuoOwB6sotlLRs/uWM7KrvwQeBOtnsPGgXAwBaLEdfAGAg8AlAD3wC0AOfAPTAJwA98AlAD3yC2bANa+OTjGcmsb1O8J3/no3dx6+5T0Lro2ENPgFoYE2/PrlGdQFqsKZvn3rBHX2BwWk5u6XsXTqzT6l3hNh/9t7x7xyS3+YytVP7Y5/3dUrJPScb+ZxjP7s1c7x936zpd8ilM/sEYxNyomQeQ7PbepZTd5jdp8uaq2C9di98STmRmsnY7ObOSp/T9nzKpRl9uq25C9Zr98KbEidCc5ma3dxZ6XPy53MutfTpQX6i0Rt6rNtP0m88GjWkdUYIfZg7Ho0a0jojhD7MHY9GDWmdETJTH15shBuk
+   eJztlwEOgjAMRbmp3kBvsIQDyJUlMYuKWzdpC137X/Ijka0u5f8N5wkAIMUsVGf5EABRkcpTi7OzJp137f0D+9KYHJUni4x0po6wRhA7T9IckU/kyjZH52kpyBqW15axvLbI4HwCQA6NPFk/fzyB/v5PUqyN84lH6f21tpectcdQvxtt70sT8gS+ieB7DdLkL089+zgA0qTJZ55ALDS928s2S5bzRP1H8Hr2LJtPjdrU97Xrnjq1sdT4VLlusfXuHh9zvVTKkuU8Ad+UMtHjx5J3tb1MrSF6ni6rroz7e8eCN1QmKE/WvNuay31On/OpLEXM023VnXF/71jwoicTJV9S3m3N5T6nPL+VJc08PaAfSfQGPZbtJzSuMhI1uHU8CH2IrYxEDW4dD0IfYisjUYNbx4Mi9eEJjTkvZQ==
   </data>
  </layer>
  <layer name="hazards" width="212" height="20">
@@ -29,7 +24,7 @@
  </layer>
  <layer name="prizes" width="212" height="20">
   <data encoding="base64" compression="zlib">
-   eJzt2bEJADAMA0GNrtHTZYBgCIa7Cb5RpQQAAABgn/4OAAAAAAAAAOBq/LgwpbEnAAAA4M0B98QCgQ==
+   eJztwQENAAAAwqD3T20ON6AAAAAAAAAAAAAAAAAAAAAAeDZCQAAB
   </data>
  </layer>
 </map>

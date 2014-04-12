@@ -1,9 +1,9 @@
 //
 //  AppDelegate.m
-//  SuperKoalio
+//  Not Mario
 //
-//  Created by Jake Gundersen on 12/27/13.
-//  Copyright (c) 2013 Razeware, LLC. All rights reserved.
+//  By Aidan McCarthy
+//  Based on The Ray Wenderlick tutorial
 //
 
 #import "AppDelegate.h"
@@ -13,6 +13,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    //Plays sound on startup
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"intro3" ofType: @"mp3"];
+    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:soundFilePath ];
+    _myAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
+    _myAudioPlayer.numberOfLoops = 0;
+    [_myAudioPlayer play];
     return YES;
 }
 							

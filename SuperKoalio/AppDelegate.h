@@ -1,15 +1,19 @@
 //
 //  AppDelegate.h
-//  SuperKoalio
+//  Not Mario
 //
-//  Created by Jake Gundersen on 12/27/13.
-//  Copyright (c) 2013 Razeware, LLC. All rights reserved.
+//  By Aidan McCarthy
+//  Based on The Ray Wenderlick tutorial
 //
 
 #import <UIKit/UIKit.h>
 
+#include <AudioToolbox/AudioToolbox.h>
+
+#import <AVFoundation/AVFoundation.h>
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (nonatomic, retain) AVAudioPlayer *myAudioPlayer;
 @end

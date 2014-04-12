@@ -1,9 +1,9 @@
 //
 //  ViewController.m
-//  SuperKoalio
+//  Not Mario
 //
-//  Created by Jake Gundersen on 12/27/13.
-//  Copyright (c) 2013 Razeware, LLC. All rights reserved.
+//  By Aidan McCarthy
+//  Based on The Ray Wenderlick tutorial
 //
 
 #import "ViewController.h"
@@ -17,8 +17,8 @@
   
   // Configure the view.
   SKView * skView = (SKView *)self.view;
-  skView.showsFPS = YES;
-  skView.showsNodeCount = YES;
+  skView.showsFPS = NO;
+  skView.showsNodeCount = NO;
   
   // Create and configure the scene.
   SKScene * scene = [GameLevelScene sceneWithSize:skView.bounds.size];
@@ -28,6 +28,11 @@
   [skView presentScene:scene];
   
 
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+  return YES;
 }
 
 - (BOOL)shouldAutorotate
@@ -46,13 +51,7 @@
   // Release any cached data, images, etc that aren't in use.
 }
 
--(IBAction)moveForward
-{
-  [self.delegate moveForward];
-  //[self.delegate moveForward;
-  //GameLevelScene
-  //[self:]
-}
+
 
 
 @end

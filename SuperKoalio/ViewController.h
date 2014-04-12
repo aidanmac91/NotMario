@@ -1,9 +1,9 @@
 //
 //  ViewController.h
-//  SuperKoalio
+//  Not Mario
 //
-
-//  Copyright (c) 2013 Razeware, LLC. All rights reserved.
+//  By Aidan McCarthy
+//  Based on The Ray Wenderlick tutorial
 //
 
 #import <UIKit/UIKit.h>

@@ -1,26 +1,19 @@
 //
 //  GameLevelScene.h
-//  SuperKoalio
+//  Not Mario
 //
-
-//  Copyright (c) 2013 Razeware, LLC. All rights reserved.
+//  By Aidan McCarthy
+//  Based on The Ray Wenderlick tutorial
 //
 
 #import <SpriteKit/SpriteKit.h>
 @class GameLevelScene;
 @protocol GameLevelSceneDelegate <NSObject>
 
-
--(void)moveForward;
-@property (nonatomic, assign) BOOL isMoving;
-//@property (nonatomic) int currentLevel;
-
 @end
 @interface GameLevelScene : SKScene
 {
-  NSTimer *timer;
+  NSTimer *timer1;//countdown timer
 }
 
-
-//@property (nonatomic, assign) BOOL isMoving;
 @end
